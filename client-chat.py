@@ -17,14 +17,12 @@ colors = [Fore.BLUE, Fore.CYAN, Fore.GREEN, Fore.LIGHTBLACK_EX,
 # choose a random color for the client
 client_color = random.choice(colors)
 
-# server's IP address
-# if the server is not on this machine, 
-# put the private (network) IP address (e.g 192.168.1.2)
+# server's IP address if the server is not on this machine, put the private (network) IP address (e.g 192.168.1.2)
 SERVER_HOST = "127.0.0.1"
 SERVER_PORT = 5002 # server's port
 separator_token = "<SEP>" # we will use this to separate the client name & message
 
-# initialize TCP socket
+# initialize socket
 s = socket.socket()
 print(f"[*] Connecting to {SERVER_HOST}:{SERVER_PORT}...")
 # connect to the server
@@ -33,6 +31,7 @@ print("[+] Connected.")
 # prompt the client for a name
 name = input("Enter your name: ")
 
+#keep listening to messages from server and print them123
 def listen_for_messages():
     while True:
         message = s.recv(1024).decode()
