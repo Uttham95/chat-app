@@ -6,7 +6,7 @@ SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5002 
 separator_token = "<SEP>" 
 
-# initialize list/set of all connected client's sockets
+# initialize list of all connected client's sockets
 client_sockets = set()
 # create a socket
 s = socket.socket()
@@ -16,7 +16,7 @@ s.bind((SERVER_HOST, SERVER_PORT))
 s.listen(5)
 print(f"[*] Listening as {SERVER_HOST}:{SERVER_PORT}")
 
-#fucntion to listen to messages and broadcast to other clients.
+#fucntion to listen to messages and broadcast to other clients
 def listen_for_client(cs):
     while True:
         try:
@@ -29,9 +29,8 @@ def listen_for_client(cs):
         else:
             # if we received a message, replace the <SEP> token with ": " for nice printing
             msg = msg.replace(separator_token, ": ")
-        # iterate over all connected sockets
+        # iterate over all connected sockets and send
         for client_socket in client_sockets:
-            # and send the message
             client_socket.send(msg.encode())
 
 

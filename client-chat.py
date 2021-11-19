@@ -27,7 +27,7 @@ print("[+] Connected.")
 # prompt the client for a name
 name = input("Enter your name: ")
 
-#keep listening to messages from server and print them123
+#keep listening to messages from server and print them
 def listen_for_messages():
     while True:
         message = s.recv(1024).decode()
@@ -49,6 +49,5 @@ while True:
     to_send = f"{client_color}[{date_now}] {name}{separator_token}{to_send}{Fore.RESET}"
     #send the message
     s.send(to_send.encode())
-
 # close the socket
 s.close()
