@@ -1,5 +1,5 @@
-# chat-app
+# Chat-app
 A very simple chat application.
-Server-chat.py is run first. 
-Client-chat.py is run after.
-Enter name start sending messages. 
+<br/> 1. Server-chat.py is run first. 
+<br/> 2. Client-chat.py is run after.
+<br/> 3. Enter name start sending messages.
